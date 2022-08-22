@@ -3,22 +3,20 @@
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 import MainLayout from "@/layouts/MainLayout.vue";
 export default {
   name: "App",
   components: {
-    HelloWorld,
     MainLayout,
   },
   watch: {
-    $route : {
-      immediate : true,
-      handler(to , from) {
-        document.title = "Github Profiles"
-      }
-    }
-  }
+    $route: {
+      immediate: true,
+      handler(to, from) {
+        document.title = "Github Profiles";
+      },
+    },
+  },
 };
 </script>
 
