@@ -1,28 +1,10 @@
-
 export const BASE_URL = process.env.VUE_APP_BASE_URL;
+import axios from "axios";
+
 export const api = async (url, params = {}) => {
-
-  params = Object.assign(
-    {
-      mode: "cors",
-      cache: "no-cache",
-    },
-    params
-  );
-
-  params.headers = Object.assign(
-    {
-      Authorization: `Bearer ${session.token}`,
-      "Content-Type": "application/json",
-    },
-    params.headers
-  );
-
-  let response = await fetch(BASE_URL + url, params);
-  let json = (await response.json()) || {};
-  if (!response.ok) {
-    let errorMessage = json.error || response.status;
-    throw new Error(errorMessage);
-  }
-  return json;
+  let instance = axios.create({
+    baseURL: BASE_URL,
+    headers: params.headers ? params.headers : {},
+  });
+  return await instance.get(url);
 };

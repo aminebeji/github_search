@@ -1,13 +1,15 @@
 <template>
-  <form class="form_container" >
+  <form @submit="Search" class="form_container">
     <input
       type="text"
       v-model="username"
       placeholder="search for github profile"
-      :class="{ error: error }"
       class="input_search"
+      :class="{ error: error }"
     />
-    <button type="button" :onclick="Search">Search</button>
+    <button type="button" class="btn btn-primary" :onclick="Search">
+      Search
+    </button>
   </form>
 </template>
 
@@ -18,31 +20,25 @@ export default {
   name: "form-search",
   setup() {
     const username = ref("");
-    const Click = ref(false);
-    const error = computed(() => Click && username.value.length < 1);
+    const error = ref(false);
     const route = useRouter();
     const Search = () => {
-      Click.value = true;
-      console.log(error);
       if (username.value.length > 1) {
         route.push(`/user/${username.value}`);
+      } else {
+        error.value = true;
       }
     };
 
     return { username, Search, error };
-  },
-  watch: {
-    error(NewErr, oldErr) {
-      console.log(NewErr, oldErr);
-    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .error {
-  color: red;
-  background-color: rebeccapurple;
+  color: red !important;
+  border: 1px red solid !important ;
 }
 .form_container {
   display: flex;
@@ -52,8 +48,8 @@ export default {
   gap: 15px;
   margin: auto;
   position: absolute;
-  top:50%;
-  left : 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 .input_search {
@@ -61,9 +57,9 @@ export default {
   background-color: white;
   padding: 0.75em 2.5em;
   border-radius: 10px;
-  width:fit-content;
-text-align: center;
-font-size: 18px;
-font-family: SF Mono, Fira Code, Fira Mono, Roboto Mono, Lucida Console, Monaco, monospace;
+  width: 400px;
+  text-align: center;
+  font-size: 16px;
+  color: #000;
 }
 </style>
