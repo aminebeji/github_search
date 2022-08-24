@@ -1,8 +1,7 @@
 <template>
   <div class="stats_main">
     <Langauges :stats="stats.lang"></Langauges>
-<!--     <MostStarred :stats="stats.repoMostLiked"></MostStarred>
- -->
+    <MostStarred :stats="stats.repoMostLiked"></MostStarred>
   </div>
 </template>
 

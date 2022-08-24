@@ -1,12 +1,12 @@
 <template>
   <div class="stats_container">
-    <h1 class="stats_title">Top Languages</h1>
+    <h1 class="stats_title">Most Starred</h1>
     <Bar
       :chart-options="options.chartOptions"
       :chart-data="options.chartData"
       :width="300"
       :height="250"
-      chartId="langauages_chart"
+      chartId="lmost_starred_chart"
     ></Bar>
   </div>
 </template>
@@ -19,21 +19,25 @@ import {
   Tooltip,
   Legend,
   ArcElement,
-  CategoryScale,
+  CategoryScale,LinearScale, BarElement
 } from "chart.js";
-ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
+import {reactive}from "vue"
+ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale, LinearScale, BarElement);
 export default {
   props: ["stats"],
 
-  setup() {
+  setup({stats}) {
+    console.log(stats)
     const labels = stats.map((item) => item.label);
     const data = stats.map((item) => item.value);
-    const backgroundColor = stats.map((item) => item.color);
+    console.log(labels)
+    console.log(data)
     const chartData = {
       labels,
       datasets: [
         {
-          backgroundColor,
+          label : "stars",
+                   backgroundColor : ["#FF7694ad"],
           data,
         },
       ],

@@ -1,4 +1,4 @@
-import { api, CusttomApi } from "@/services/api.js";
+import { api } from "@/services/api.js";
 
 export default {
   user(username) {
@@ -10,8 +10,8 @@ export default {
         throw { error: true };
       });
   },
-  customHttp(url) {
-    return CusttomApi(url)
+  repos(username) {
+    return api(`/users/${username}/repos`)
       .then((result) => {
         return { data : result.data, error: false };
       })

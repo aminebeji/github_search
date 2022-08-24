@@ -7,7 +7,7 @@ const setStats = (state, payload) => {
   console.log("stats state changed:", state.stats);
 };
 
-export default {
+export const userMutation =  {
   setStats,
   setUser,
 };

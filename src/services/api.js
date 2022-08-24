@@ -9,11 +9,3 @@ export const api = async (url, params = {}) => {
   return await instance.get(url);
 };
 
-export const CusttomApi = async (url, params = {}) => {
-  let instance = axios.create({
-    baseURL: url,
-    headers: params.headers ? params.headers : {},
-  });
-  return await instance.get();
-};
-

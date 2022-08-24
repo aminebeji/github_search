@@ -19,6 +19,7 @@
     "vue-chartjs": "^4.1.1",
     "vue-octicon": "^2.1.1",
     "vue-router": "^4.1.3",
+    "vue-spinner": "^1.0.4",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
