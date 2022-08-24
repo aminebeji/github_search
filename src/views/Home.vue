@@ -1,5 +1,7 @@
 <template>
+  <main class="search_container">
     <SearchForm></SearchForm>
+  </main>
 </template>
 
 <script>
@@ -12,4 +14,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.search_container {
+  min-height: 100vh;
+}
+</style>

@@ -40,6 +40,7 @@ export default {
   top: 0;
   right: 0;
   border: 0;
+  z-index: 2;
   &:hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
   }

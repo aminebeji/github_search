@@ -1,4 +1,4 @@
-import { api } from "@/services/api.js";
+import { api, CusttomApi } from "@/services/api.js";
 
 export default {
   user(username) {
@@ -7,7 +7,16 @@ export default {
         return { ...result.data, error: false };
       })
       .catch((err) => {
-        throw  { error: true };
+        throw { error: true };
+      });
+  },
+  customHttp(url) {
+    return CusttomApi(url)
+      .then((result) => {
+        return { data : result.data, error: false };
+      })
+      .catch((err) => {
+        throw { error: true };
       });
   },
 };
