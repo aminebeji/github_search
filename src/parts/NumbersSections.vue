@@ -7,13 +7,14 @@
 </template>
 
 <script>
-import NumberCard from "@/components/NumberCard.vue";
+import NumberCard from "@/components/cards/NumberCard.vue";
+import { useStore } from "vuex";
+import { computed } from "vue";
 
 export default {
-    props : ["user"],
-
-  setup({ user }) {
-    return { user };
+  setup() {
+    const store = useStore();
+    return { user: computed(() => store.state.user) };
   },
   components: { NumberCard },
 };

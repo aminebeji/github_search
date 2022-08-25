@@ -1,11 +1,12 @@
 <template>
   <section class="top_container_info">
-    <UsernameSection :user="user"></UsernameSection>
-    <Location :user="user"></Location>
-    <NumbersSections :user="user"></NumbersSections>
+    <UsernameSection ></UsernameSection>
+    <Location ></Location>
+    <NumbersSections ></NumbersSections>
   </section>
   <section class="bottom_container">
-    <Stats :stats="stats" />
+    <Stats  />
+    <RepoList ></RepoList> 
   </section>
 </template>
 <script>
@@ -13,15 +14,16 @@ import UsernameSection from "@/parts/UsernameSection.vue";
 import Location from "../parts/Location.vue";
 import NumbersSections from "../parts/NumbersSections.vue";
 import Stats from "./Stats.vue";
+import RepoList from "./RepoList.vue";
 export default {
-  props: ["user", "stats"],
-  setup({ user, stats }) {
-    return {
-      user,
-      stats,
-    };
+  components: {
+    UsernameSection,
+    Location,
+    NumbersSections,
+    Stats,
+    Stats,
+    RepoList,
   },
-  components: { UsernameSection, Location, NumbersSections, Stats, Stats },
 };
 </script>
 

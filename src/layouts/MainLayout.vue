@@ -1,15 +1,12 @@
 <template>
-  <div>
-    <NavBar />
-<main>
-      <router-view />
-
-</main>
-</div>
+  <NavBar />
+  <main>
+    <router-view />
+  </main>
 </template>
 
 <script>
-import NavBar from "@/components/NavBar.vue";
+import NavBar from "@/components/Items/NavBar.vue";
 export default {
   props: ["children"],
   setup() {

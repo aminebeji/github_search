@@ -1,0 +1,27 @@
+.error {
+    color: red !important;
+    border: 1px red solid !important ;
+  }
+  .form_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .input_search {
+    border: none;
+    background-color: white;
+    padding: 0.75em;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 23px;
+    color: #000;
+    max-width: 470px;
+  }

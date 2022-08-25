@@ -1,6 +1,4 @@
-*  {
-  letter-spacing: 1.5px !important;
-}
+
 .large_text {
   font-size: 28px;
   font-weight: 800;
@@ -18,9 +16,8 @@
   flex-wrap: wrap;
 }
 .stats_container {
-  width: fit-content;
   background-color: #fff;
-  padding: 2em;
+  padding: clamp(10px, 2em, 80px);
   border-radius: 5px;
 }
 .stats_title {

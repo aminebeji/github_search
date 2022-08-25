@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import CornerGit from "@/parts/CornerGit.vue";
+import CornerGit from "@/assets/svg/CornerGit";
 export default {
   name: "nav-bar",
   components: {
@@ -29,5 +29,6 @@ export default {
   width: 45px;
   background-color: #fff;
   border-radius: 100%;
+  background-color: red;
 }
 </style>

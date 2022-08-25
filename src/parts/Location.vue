@@ -1,6 +1,6 @@
 <template>
   <div class="align_display info_container">
-    <h1 :v-if="user.location" class="small_text">
+    <h1 v-if="user.location" class="small_text">
       <Location></Location>
       {{ user.location }}
     </h1>
@@ -12,14 +12,15 @@
 
 <script>
 import Location from "@/assets/svg/Location.vue";
-import Calendar from "@/assets/Calendar.vue";
+import Calendar from "@/assets/svg/Calendar.vue";
 import moment from "moment";
+import { useStore } from "vuex";
+import { computed } from "vue";
 
 export default {
-  props: ["user"],
-
-  setup({ user }) {
-    return { user, joinedAt: new moment(user.created_at).format("LLL") };
+  setup() {
+        const store = useStore()
+    return { user  : computed(()=> store.state.user), joinedAt: new moment(store.state.user.created_at).format("LL")};
   },
   components: { Location, Calendar },
 };

@@ -6,7 +6,7 @@
       :chart-data="options.chartData"
       :width="300"
       :height="250"
-      chartId="lmost_starred_chart"
+      chartId="most_starred_chart"
     ></Bar>
   </div>
 </template>
@@ -27,11 +27,8 @@ export default {
   props: ["stats"],
 
   setup({stats}) {
-    console.log(stats)
     const labels = stats.map((item) => item.label);
     const data = stats.map((item) => item.value);
-    console.log(labels)
-    console.log(data)
     const chartData = {
       labels,
       datasets: [

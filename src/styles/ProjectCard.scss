@@ -1,0 +1,47 @@
+.repo_card {
+    text-decoration: none;
+    text-align: left;
+  }
+  .repo_card_title {
+    color: rgb(36, 41, 46);
+    font-size: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .repo_card_discription {
+    color: rgb(88, 96, 105);
+    font-size: 13px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 2rem;
+    margin-top: 1em;
+  }
+  .repo_stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .small_item_card {
+    color: rgb(106, 115, 125);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    svg {
+      width: 15px !important;
+    }
+  }
+  .repo_stats_left {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  .orb_lang {
+    width: 11px;
+    height: 11px;
+    border-radius: 100%;
+    opacity: 0.8;
+  }

@@ -1,4 +1,6 @@
 export default {
   user: {},
-  stats : {}
+  stats : {},
+  error : false,
+  loading : true
 };

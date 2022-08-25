@@ -1,9 +1,12 @@
 import { userMutation } from "./user/mutation";
 import userState from "./user/state";
+import { userAction } from "./user/actions";
+export const state = { ...userState };
 
-export const state = Object.assign(
-  {},
-  { user: userState.user, stats: userState.stats }
-);
+export const mutation = {
+  ...userMutation,
+};
 
-export const mutation = Object.assign({}, { userMutation });
+export const actions = {
+  ...userAction,
+};

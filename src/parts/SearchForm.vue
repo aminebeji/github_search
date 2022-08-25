@@ -1,5 +1,5 @@
 <template>
-  <form @submit="Search" class="form_container">
+  <form @submit="Search" class="container form_container">
     <input
       type="text"
       v-model="username"
@@ -36,30 +36,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.error {
-  color: red !important;
-  border: 1px red solid !important ;
-}
-.form_container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 15px;
-  margin: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.input_search {
-  border: none;
-  background-color: white;
-  padding: 0.75em 2.5em;
-  border-radius: 10px;
-  width: 400px;
-  text-align: center;
-  font-size: 16px;
-  color: #000;
-}
+@import url("@/styles/SearchForm.scss");
 </style>

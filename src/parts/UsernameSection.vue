@@ -18,10 +18,13 @@
 </template>
 
 <script>
+import { computed } from "vue";
+import { useStore } from "vuex";
 export default {
-  props : ["user"],
-  setup({ user }) {
-    return { user };
+  setup() {
+    const store = useStore();
+    document.title = "GitProfile | " + store.state.user.name;
+    return { user: computed(() => store.state.user) };
   },
 };
 </script>
